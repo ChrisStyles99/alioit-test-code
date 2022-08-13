@@ -1,10 +1,6 @@
-import axios from 'axios';
+import { baseInstance } from '../utils/axiosInstance';
 
-const baseInstance = axios.create({
-  baseURL: 'http://localhost:5000'
-});
-
-export const useAxios = (url, options) => {
+export const useAxiosPost = (url, options) => {
   const postData = async(dataPost) => {
     let data = null;
     let isError = false;

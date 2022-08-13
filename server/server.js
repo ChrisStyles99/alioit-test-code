@@ -33,6 +33,12 @@ app.get('/all-leagues', async(req, res) => {
   res.status(200).json(leagues);
 });
 
+app.get('/league-stats', async(req, res) => {
+  const stats = await Stat.find({season: req.query.season, leagueAbbr: req.query.leagueAbbr});
+
+  res.status(200).json(stats);
+});
+
 app.post('/add-league', async(req, res) => {
   if(!req.body.leagueId || !req.body.leagueName || !req.body.leagueLogo || !req.body.leagueAbbr) {
     return res.status(400).json({error: true, message: 'Por favor envie los datos correctamente'});

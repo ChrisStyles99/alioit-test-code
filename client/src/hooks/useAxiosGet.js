@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { footballInstance } from '../utils/axiosInstance';
+import { useEffect, useState } from 'react'
+import { baseInstance } from '../utils/axiosInstance';
 
-export const useAxiosFootball = (url, options = {}) => {
+export const useAxiosGet = (url, options = {}) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -9,8 +9,8 @@ export const useAxiosFootball = (url, options = {}) => {
   useEffect(() => {
     const getData = async() => {
       try {
-        const apiData = await footballInstance.get(url, options);
-        setData(apiData.data.data);
+        const apiData = await baseInstance.get(url, options);
+        setData(apiData.data);
       } catch (error) {
         setIsError(error);
       } finally {
