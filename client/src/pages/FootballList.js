@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import LeagueListCard from '../components/LeagueListCard';
 import { useAxiosFootball } from '../hooks/useAxiosFootball'
 
 function FootballList() {
@@ -15,11 +16,7 @@ function FootballList() {
     <div className="league-list-page">
       {isError && <p>Hubo un error al traer los datos</p>}
       {data?.map(league => {
-        return <div key={league.id} className="league-card">
-          <h1>{league.name}</h1>
-          <img src={league.logos.light} alt={league.name + ' logo'} />
-          <Link to={`/league/${league.id}`} className="league-card-button">Ver más</Link>
-        </div>
+        return <LeagueListCard league={league} />
       })}
     </div>
   )

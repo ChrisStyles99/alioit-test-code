@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import SavedLeagueListCard from '../components/SavedLeagueListCard';
 import { useAxiosGet } from '../hooks/useAxiosGet';
 
 function SavedLeagues() {
@@ -12,11 +12,7 @@ function SavedLeagues() {
       {isError && <p>Hubo un error al traer los datos</p>}
       {data?.length < 1 && <p>No hay ligas guardadas</p>}
       {data?.map(league => {
-        return <div key={league._id} className="league-card">
-          <h1>{league.leagueName}</h1>
-          <img src={league.leagueLogo} alt={league.leagueName} />
-          <Link to={`/saved/${league.leagueId}`} state={league} className="league-card-button">Ver más</Link>
-        </div>
+        return <SavedLeagueListCard league={league} />
       })}
     </div>
   )

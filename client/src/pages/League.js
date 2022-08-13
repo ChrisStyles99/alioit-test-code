@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { footballInstance } from '../utils/axiosInstance';
 import { useAxiosFootball } from '../hooks/useAxiosFootball'
 import { useAxiosPost } from '../hooks/useAxiosPost';
+import LeagueCard from '../components/LeagueCard';
+import SelectCard from '../components/SelectCard';
 
 function League() {
   const params = useParams();
@@ -63,32 +65,11 @@ function League() {
         <img src={data?.logos?.light} alt={data?.name} />
         <button onClick={handleSave} className="league-card-button">Guardar liga</button>
       </div>
-      <div className="select-season-card">
-        <h2>Buscar estadisticas por temporada</h2>
-        <form onSubmit={handleSubmit}>
-          <select name="" id="" placeholder="Selecciona una temporada" value={selectedSeason} onChange={e => setSelectedSeason(e.target.value)}>
-            <option value="">Seleccione una temporada</option>
-            {seasons.map(season => (
-              <option key={season} value={season}>{season}</option>
-            ))}
-          </select>
-          <button className="league-card-button">Buscar</button>
-        </form>
-      </div>
+      <SelectCard selectedSeason={selectedSeason} setSelectedSeason={setSelectedSeason} handleSubmit={handleSubmit} seasons={seasons} />
       <div className="season-stats-card">
         {seasonsError && <p>Hubo un error al traer los datos</p>}
         {!seasonsLoading && selectedSeasonData.map(team => (
-          <div key={team.team.id} className="team-stats-card">
-            <h2>{team.team.name}</h2>
-            <div className="team-stats-body">
-              <img src={team.team.logos?.[0]?.href} alt={team.team.name} />
-              <div className="team-stats">
-                <h3>Ranking: {team.stats[8].value}</h3>
-                <h3>Puntos: {team.stats[6].value}</h3>
-                <button onClick={() => handleClick(team)} className="league-card-button">Guardar estadistica</button>
-              </div>
-            </div>
-          </div>
+          <LeagueCard team={team} handleClick={handleClick} />
         ))}
       </div>
     </div>
