@@ -5,7 +5,8 @@ const leagueSchema = new Schema({
   leagueId: String,
   leagueName: String,
   leagueLogo: String,
-  leagueAbbr: String
+  leagueAbbr: String,
+  leagueSeasons: Array
 });
 
 module.exports = mongoose.model('League', leagueSchema);
