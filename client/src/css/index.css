@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +8,157 @@
 
 body {
   background-color: #EAEEF4;
+  font-family: 'Poppins', sans-serif;
 }
 
 .navbar {
   background-color: #0C69F3;
   height: 100px;
+}
+
+.navbar-inner {
+  width: 80%;
+  height: 100%;
+  margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo h1 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.links {
+  display: flex;
+  list-style-type: none;
+}
+
+.links li {
+  margin: 0 1rem;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.league-list-page {
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.league-card {
+  background-color: #fff;
+  border-radius: 1.5rem;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.league-card h1 {
+  text-align: center;
+}
+
+.league-card img {
+  height: 200px;
+  object-fit: cover;
+  margin: 1rem 0;
+}
+
+.league-card-button {
+  background-color: #0C69F3;
+  opacity: 75%;
+  padding: 0.5rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+button.league-card-button {
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.league-card-button:hover {
+  opacity: 1;
+}
+
+.league-page {
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.select-season-card {
+  background-color: #fff;
+  border-radius: 1.5rem;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-season-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-season-card select {
+  /* width: 50%; */
+  padding: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.season-stats-card {
+  background-color: #fff;
+  grid-column: span 2;
+  padding: 0.75rem;
+  border-radius: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.team-stats-card {
+  background-color: #F7F8FA;
+  border-radius: 1.5rem;
+}
+
+.team-stats-card h2 {
+  text-align: center;
+}
+
+.team-stats-card img {
+  height: 200px;
+}
+
+.team-stats-body {
+  display: flex;
+  gap: 1rem;
+}
+
+.team-stats h3 {
+  margin-top: 1rem;
 }

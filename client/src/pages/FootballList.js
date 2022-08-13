@@ -9,13 +9,16 @@ function FootballList() {
 
   const { data, isLoading, isError } = useAxiosFootball('/leagues');
 
+  if(isLoading) return <div className="league-list-page">Cargando...</div>
+
   return (
-    <div>
+    <div className="league-list-page">
+      {isError && <p>Hubo un error al traer los datos</p>}
       {data?.map(league => {
-        return <div key={league.id}>
+        return <div key={league.id} className="league-card">
           <h1>{league.name}</h1>
           <img src={league.logos.light} alt={league.name + ' logo'} />
-          <Link to={`/league/${league.id}`}>Ver más</Link>
+          <Link to={`/league/${league.id}`} className="league-card-button">Ver más</Link>
         </div>
       })}
     </div>
