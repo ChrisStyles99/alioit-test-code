@@ -3,7 +3,7 @@
 ## Requisitos
 
 1. Tener instalado node y npm o yarn.
-2. Tener un string para poder conectarse a MongoDB. Ej: ```mongodb://localhost:27017```
+2. Tener un string para poder conectarse a MongoDB. Ej: ```mongodb://localhost:27017/db-name``` sin docker o ```mongodb://mongo:27017/db-name``` utilizando docker.
 3. Tener docker instalado en su computadora (opcional)
 
 ## Para utilizar docker
