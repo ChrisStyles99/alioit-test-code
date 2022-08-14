@@ -4,6 +4,14 @@
 
 1. Tener instalado node y npm o yarn.
 2. Tener un string para poder conectarse a MongoDB. Ej: ```mongodb://localhost:27017```
+3. Tener docker instalado en su computadora (opcional)
+
+## Para utilizar docker
+
+1. Primero, tiene que crear un archivo ```.env``` dentro de la carpeta server, con el string para conectarse a MongoDB, la variable es ```MONGODB_URI```. El string de conexión debe contener el nombre de la base de datos.
+2. Si tiene docker instalado en su computadora, puede utilizar el comando ```docker-compose up -d``` para correr los contenedores de docker en forma detach.
+3. Para cerrar los contenedores puede utilizar el comando ```docker-compose down```.
+4. Si no lo tiene instalado, puede utilizar los siguientes pasos para correr las aplicaciones de manera separada.
 
 ## Para correr el frontend
 
