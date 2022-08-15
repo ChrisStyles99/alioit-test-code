@@ -21,9 +21,7 @@ function League() {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log(selectedSeason);
     const seasonData = await footballInstance.get(`/leagues/${data?.id}/standings?season=${selectedSeason}&sort=asc`);
-    console.log(seasonData.data.data.standings);
     setSelectedSeasonData(seasonData.data.data.standings);
   }
 
@@ -69,7 +67,7 @@ function League() {
       <div className="season-stats-card">
         {seasonsError && <p>Hubo un error al traer los datos</p>}
         {!seasonsLoading && selectedSeasonData.map(team => (
-          <LeagueCard team={team} handleClick={handleClick} />
+          <LeagueCard team={team} handleClick={handleClick} key={team.team.id} />
         ))}
       </div>
     </div>

@@ -25,6 +25,11 @@ body {
   align-items: center;
 }
 
+.navbar-inner .menu {
+  height: 50px;
+  display: none;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -161,4 +166,91 @@ button.league-card-button {
 
 .team-stats h3 {
   margin-top: 1rem;
+}
+
+@media screen and (max-width: 1500px) {
+  .league-page {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .league-list-page {
+    width: 95%;
+  }
+
+  .league-page {
+    width: 95%;
+  }
+
+  .season-stats-card {
+    grid-column: span 2;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .league-list-page {
+    width: 95%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .league-page {
+    width: 95%;
+    grid-template-columns: 1fr;
+  }
+
+  .season-stats-card {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+
+  .team-stats-card img {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navbar-inner ul {
+    display: block;
+    position: absolute;
+    background-color: #0C69F3;
+    height: calc(100vh - 100px);
+    top: 100px;
+    left: 0;
+    width: 50%;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: 0.3s ease all;
+  }
+
+  .navbar-inner ul.active {
+    transform: translateX(0);
+  }
+
+  .navbar-inner ul li {
+    margin-top: 1rem;
+  }
+
+  .navbar-inner .menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .league-list-page {
+    width: 95%;
+    grid-template-columns: 1fr;
+  }
+
+  .league-page {
+    width: 95%;
+    grid-template-columns: 1fr;
+  }
+
+  .season-stats-card {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
 }

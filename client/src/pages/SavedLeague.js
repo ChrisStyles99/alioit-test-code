@@ -31,7 +31,7 @@ function SavedLeague() {
       <div className="season-stats-card">
         {selectedSeasonData.length < 1 && <p>No hay estadisticas para esta temporada</p>}
         {selectedSeasonData.map(team => (
-          <SavedLeagueCard team={team} />
+          <SavedLeagueCard team={team} key={team._id} />
         ))}
       </div>
     </div>

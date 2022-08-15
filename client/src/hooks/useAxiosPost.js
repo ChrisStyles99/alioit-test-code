@@ -9,7 +9,6 @@ export const useAxiosPost = (url, options) => {
     try {
       data = await baseInstance.post(url, dataPost, options);
     } catch (error) {
-      console.log(error);
       isError = error;
     } finally {
       isLoading = false;

@@ -12,7 +12,7 @@ function SavedLeagues() {
       {isError && <p>Hubo un error al traer los datos</p>}
       {data?.length < 1 && <p>No hay ligas guardadas</p>}
       {data?.map(league => {
-        return <SavedLeagueListCard league={league} />
+        return <SavedLeagueListCard league={league} key={league._id} />
       })}
     </div>
   )
